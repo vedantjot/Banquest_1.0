@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Banquest</title>
+</head>
+<body>
+    <div class="topnav">
+        <a  href="#contactsec">Contact</a> 
+        <a  href="#aboutsec">About</a>
+        <a class="active" href="#home">Home</a>
+    </div>
+    <div class="container">
+        <div class="main">
+            <img id="home"  alt="photo" src="main(3).jpg">
+            <div class="text-block">
+                <span id="text1"> Welcome to Banquest</span><br>
+                <span id="text2">Come Celebrate with us</span><br>
+                <button  class="button button1" onclick="window.location.href='content.html'">Explore</button>
+                <br><br><br><br>
+                <p id="aboutsec"></p>
+            </div>
+        </div>
+       
+       
+        <div  class="aboutus">
+            <div class="image" >
+                <img   id="aboutus-img"  alt="text" src="aboutus.jpg"><br>
+            </div>
+            <div class="description" id="about">
+                <span id="header"> About us<br> </span><br><br>
+                <p id="content"> 
+                    Searching for the best venue ...?<br><br>
+                    You are at the perfect place. We hunt best venue according to 
+                    your preference along with intrim booking facility you can easily
+                    book your venue.<br>
+                    Here we also provide you all views and detail information which can greatly help you to choose among many options.
+                    <br>Now you don't have to roam here and there and negotiate for price, we will arrange everything for you.<br>
+                    <br>We are delighted to help you with your search .
+                </p><br><br>
+
+            </div>
+</div>
+<br >
+        <div class="contactus">
+            <p id="contactsec"></p>
+            <span id="heading">Contact Us</span>
+            
+            <form name="contact" method="post" action="contact.php" class="form" onsubmit="return validation()">
+                <div  id="form">
+                    
+                    <input maxlength="60" size="40" name="txtname" id="txtname" placeholder="Name" type="text"> 
+                    <input maxlength="60" size="40" name="txtemail" id="txtemail" placeholder="Email" type="text"></div>
+                    
+                    <div  style=" text-align: center;color: black; width: 55%; margin:auto;" align="center">
+                        <span  id="txtname1" style="color:red; padding: 0px 0px 0px 0px; float:left;"></span>
+                        <span  id="txtemail1" style="color:red;  padding: 0px 0px 0px 130px; float:center;"></span>
+                        </div>
+                        <br >
+                        
+                <div class="text"><input maxlength="60" size="110" name="txtsubject" id="txtsubject" placeholder="Subject" type="text"><br><span id="txtsubject1" style="color:red;float: left;padding-left: 300px;"></span>
+                 </div>
+                 <br >
+                <div class="textarea"><textarea  cols="80" rows="10" name="txtmessage" id="txtmessage" placeholder="Type your message here...."></textarea><br><span id="txtmessage1" style="color:red; float: left;padding-left: 300px;"></span><br>
+                <button  id="submit" name="submit">Submit</button>
+                </div>
+                <br>
+            </form>
+                    
+            <div class="socials">
+                <a  href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+                <a  href="https://www.twitter.com/" target="_blank"  class="fa fa-twitter"></a>
+                <a  href="https://www.linkedin.com/" target="_blank" class="fa fa-linkedin"></a>
+            </div>
+            <p  class="footer">
+                <span  id="footer">©2020  wwww.Banquest.tk All rights reserved.</span>
+            </p>
+        </div>
+    </div>
+          
+    
+
+    
+</body>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="menu.js"></script>
+
+    <script type="text/javascript">
+  function validation(){
+      var txtname=document.getElementById('txtname').value;
+      var txtemail=document.getElementById('txtemail').value;
+      var txtsubject=document.getElementById('txtsubject').value;
+      var txtmessage=document.getElementById('txtmessage').valu;
+
+      var namecheck = /^[A-Za-z.  ]{3,30}$/;
+      var emailcheck = /^[A-Za-z_.0-9]{3,}@[A-Za-z]{3,30}[.]{1}[A-Za-z.]{2,6}$/;
+      var subjectcheck = /^[A-Za-z.  ]{3,30}$/;
+      var messagecheck= /^[A-Za-z._ ]{3,300}$/;
+
+      if(namecheck.test(txtname)){
+          document.getElementById('txtname1').innerHTML="";
+      }
+      else{
+ 
+          document.getElementById('txtname1').innerHTML="** Name is invalid";
+          return false;
+      }
+
+
+      if(emailcheck.test(txtemail)){
+          document.getElementById('txtemail1').innerHTML="";
+      }
+      else{
+          document.getElementById('txtemail1').innerHTML="** E-mail is invalid";
+          return false;
+      }
+
+
+
+      if(subjectcheck.test(txtsubject)){
+          document.getElementById('txtsubject1').innerHTML="";
+      }
+      else{
+          document.getElementById('txtsubject1').innerHTML="** Subject is invalid";
+          return false;
+      }
+
+
+      if(messagecheck.test(txtmessage)){
+          document.getElementById('txtmessage1').innerHTML="";
+      }
+      else{
+          document.getElementById('txtmessage1').innerHTML="** Text area is invalid";
+          return false;
+      }
+      
+  }
+  
+  
+
+
+
+</script>
+</html>

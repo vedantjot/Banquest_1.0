@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<script>
+
+function all(){
+    
+    
+    
+  var xhttp;
+ 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("display").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.php?q="+"'surat' OR city='bhavnagar' OR city='ahmedabad'", true);
+  xhttp.send();
+}
+
+function reset(){
+    
+    
+    
+    
+  var xhttp;
+ 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("display").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.php?q="+"'surat' OR city='bhavnagar'OR city='ahmedabad'", true);
+  xhttp.send();
+}
+
+function surat(){
+    
+     var xhttp;
+ 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("display").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.php?q="+"'surat'", true);
+  xhttp.send();
+    
+    
+}
+
+   
+function bhavnagar(){
+    
+  var xhttp;
+ 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("display").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.php?q="+"'bhavnagar'", true);
+  xhttp.send();
+}
+
+function ahmedabad(){
+    
+    var xhttp;
+   
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("display").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "content.php?q="+"'ahmedabad'", true);
+    xhttp.send();
+  }
+
+
+</script>
+
+    <style>
+     
+        .topnav {
+overflow: hidden;
+background-color:#231F20;;
+border-radius: 0px;
+position: -webkit-sticky; /* Safari */
+position: sticky;
+top: 0;
+}
+.topnav a {
+float: right;
+color: #ad974f;
+text-align: center;
+padding: 16px 16px;
+text-decoration: none;
+font-size: 17px;
+border-radius: 0px;
+}
+.topnav a:hover {
+background-color: #8E793E ;
+color: black;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: rgb(235, 235, 235);
+}
+
+.flex-container > div {
+  background-color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  height: 2750px;
+  font-size: 30px;
+}
+button{
+  
+  width:100px;
+  height:35px;
+  background: linear-gradient(to left top, #AD974F 50%, #8E793E 50%);
+  border-style: none;
+  color:#fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-family: 'Lato';
+  font-weight: 400;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0px;
+  overflow: hidden;
+  transition: all .5s;
+  box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+}
+
+button:hover{
+  transition: all .5s;
+  transform: rotate(-3deg) scale(1.1);
+  box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+}
+
+/*.flex-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}*/
+
+.flex-container > div > div {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  background-color: white;
+  width: 1050px;
+  margin-left: 75px;
+  margin-bottom:20px;
+  margin-top: 30px;
+  text-align: center;
+  line-height: 250px;
+  font-size: 30px;
+  border-radius:5px 5px 5px 5px;
+  box-shadow:2px 2px 2px black;
+  height: 150px;
+}
+#img{
+     float:left;
+    padding-top: 8px;
+     width: 150px;
+    margin-left: 5px;
+    margin-top: 5px; 
+    margin-bottom: 0px;
+    height: 125px; 
+}
+</style>
+</head>
+<body onload="all()">
+    <div class="topnav"><a href="cat.html">Select By Category</a><a class="active" href="index.html#contactsec">Contact</a>
+        <a href="index.html#home">Home</a>
+        </div>
+        <div class="flex-container">
+            <div style="width: 300px;">
+                <p  style="color:black;  font-size: 35px; font-family: Arial, Helvetica, sans-serif;">Filter</p>
+                <p style="color:#AD974F;  font-size: 25px; font-family: Arial, Helvetica, sans-serif;background-color: black;">Cities</p>
+                <button onclick="reset()">All</button>
+               
+                <br>
+                <br>
+                 <button onclick="bhavnagar()">Bhavnagar</button>
+                <br>
+                <br>
+                <button onclick="ahmedabad()">Ahmedabad</button>
+                <br>
+                <br>
+                
+                <button onclick="surat()">Surat</button>
+                <br>
+	            
+            </div>
+                     <div id="display" style="width: 1200px;">
+                    
+                    
+                    
+                    
+                        </div>
+           </div>
+            
+          
+</body>
+</html>
